@@ -1,5 +1,7 @@
- import express from "express";
- import  {getUsers, createUsers, getUser, deleteUser, updateUser} from "../controllers/users.js"
+//  import express from "express";
+const express = require("express");
+//  import  {getUsers, createUsers, getUser, deleteUser, updateUser} from "../controllers/users.js";
+const {getUsers, createUsers, getUser, deleteUser, updateUser} = require('../controllers/users');
 
  const router = express.Router();
 

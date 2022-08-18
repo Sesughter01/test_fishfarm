@@ -1,6 +1,6 @@
  
 // Import the mysql module object
-import  mmysql from 'mysql'; 
+const  mmysql = require('mysql'); 
 
 
 // Create Database connection
@@ -11,4 +11,4 @@ import  mmysql from 'mysql';
     database:"fishfarmclub"
   
   })
-  export default db;
+  module.exports =  db;

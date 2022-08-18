@@ -1,10 +1,12 @@
-import {v4 as uuid} from "uuid";
-import db from "../controllers/dbase/db.js";
+// import {v4 as uuid} from "uuid";
+const {uuid} = require('uuidv4');
+const db = require("./dbase/db");
+// import db from "../controllers/dbase/db.js";
 
 
 
 
-export const getUsers = (req,res)=>{
+ const getUsers = (req,res)=>{
 
     // res.send(users);
 
@@ -20,7 +22,7 @@ export const getUsers = (req,res)=>{
 }
 
 
-export const getUser = (req,res)=>{
+ const getUser = (req,res)=>{
    const singleUserid =  req.body.id;
     
 
@@ -37,7 +39,7 @@ export const getUser = (req,res)=>{
         
           });
     }
-export const createUsers = (req,res)=>{
+ const createUsers = (req,res)=>{
     
     const email = req.body.email;
     
@@ -64,7 +66,7 @@ export const createUsers = (req,res)=>{
 }
 
 
-export const deleteUser = (req,res)=>{
+ const deleteUser = (req,res)=>{
 
  const  del_user =  req.params.id;
    
@@ -82,7 +84,7 @@ export const deleteUser = (req,res)=>{
     )
 }
 
-export const updateUser = (req,res)=>{
+ const updateUser = (req,res)=>{
  
    const updateUser_email = req.body.email;
 
@@ -101,3 +103,4 @@ export const updateUser = (req,res)=>{
    )
     res.send("User updated successfully");
 }
+module.exports = {getUsers, createUsers, getUser, deleteUser, updateUser};
